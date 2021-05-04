@@ -1,0 +1,6 @@
+<div class="header-area">
+  <label class="label-title">Sample Code</label>
+  <select [(ngModel)]="selectedSnippets" (ngModelChange)="changeSelection($event)">
+    <option *ngFor="let snippet of dbService.snippets" [ngValue]="snippet" >{{snippet.postTitle}}</option>
+  </select>
+</div>

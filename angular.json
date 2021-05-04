@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ugo-compiler"
+    }
+  },
+  "defaultProject": "ugo-compiler",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,93 @@
+
+.main-panel {
+  display: flex;
+  height: 100%;
+}
+
+.is-desktop-half {
+  width: 48%;
+}
+
+.btn-execute {
+  min-width: 100px;
+  margin: 0 12px;
+  height: 100px;
+  border-radius: 50%;
+  padding: unset;
+  border: none;
+  color: white;
+  font-family: 'Orbitron';
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-execute:hover {
+  outline: none;
+}
+
+.code-frame {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.label-title {
+  font-size: 1.5rem;
+  font-family: Orbitron;
+  font-weight: 800;
+}
+
+.text-area {
+  width: calc(100% - 39px);
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #808080;
+  resize: none;
+  padding-left: 35px;
+  padding-top: 10px;
+  font-size: 13px;
+  line-height: 16px;
+  background: url('../../../../alien-compiler/src/assets/images/textarea_number.png');
+  background-repeat: no-repeat;
+}
+
+.text-area:focus {
+  outline: none;
+}
+
+.text-area-wrapper {
+  display: inline-block;
+  background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
+  background-size: 100% 32px;
+  background-position: left 10px;
+  height: 96.5%;
+}
+
+.result-text-label {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 1px solid #808080;
+  padding: 10px;
+}
+
+@media only screen and (max-width : 1024px) {
+  .main-panel {
+    flex-direction: column;
+  }
+
+  .is-desktop-half {
+    width: 100%;
+  }
+
+  .btn-execute {
+    top: 0 !important;
+    width: 100px;
+    margin: 10px auto;
+  }
+}

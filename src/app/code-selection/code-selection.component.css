@@ -1,0 +1,14 @@
+.header-area {
+  height: 92px;
+}
+
+.label-title {
+  font-size: 1.0rem;
+  font-family: Orbitron;
+  margin-right: 10px;
+}
+
+select {
+  height: 25px;
+  width: 300px;
+}

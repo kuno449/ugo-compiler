@@ -1,0 +1,21 @@
+<div class="header">
+  <app-code-selection></app-code-selection>
+</div>
+
+<div class="main-panel">
+
+  <app-compiler-input class="is-desktop-half"
+                      [panelHeight]="panelHeight"
+  ></app-compiler-input>
+
+  <button class="btn-execute"
+          (click)="compile()"
+          [style.background]="compileService.isCompiling ? '#379c36' : '#416b90'"
+          [style.top.px]="(panelHeight / 2) - 15"
+  >{{compileService.isCompiling ? 'Compiling' : 'Execute' }}</button>
+
+  <app-compiler-result class="is-desktop-half"
+                       [panelHeight]="panelHeight"
+  ></app-compiler-result>
+
+</div>
