@@ -1,9 +1,20 @@
+:root {
+  --main-one: #4c2721;
+  --main-two: #fa9538;
+  --main-three: #fdad56;
+  --main-yellow: #d0a500;
+  --main-green: #339456;
+  --main-black: #333333;
+  --focus-color: 0 0 2px 3pt #bf620b;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
 html {
   height: 100%;
 }
 
 body {
-  background: #f2f2f2;
+  background: whitesmoke;
   margin: 0 !important;
 }

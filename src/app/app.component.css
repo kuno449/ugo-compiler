@@ -7,19 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
-}
-
-p {
-  margin: 0;
-}
-
 .spacer {
   flex: 1;
 }
@@ -32,7 +19,6 @@ p {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #272727;
   color: white;
   font-weight: 600;
 }
@@ -51,79 +37,6 @@ p {
   margin-right: 20px;
 }
 
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-.card {
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
-}
-
-.card-container .card:not(:last-child) {
-  margin-right: 0;
-}
-
-.card.card-small {
-  height: 16px;
-  width: 168px;
-}
-
-.card-container .card:not(.highlight-card) {
-  cursor: pointer;
-}
-
-.card-container .card:not(.highlight-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-}
-
-.card-container .card:not(.highlight-card):hover .material-icons path {
-  fill: rgb(105, 103, 103);
-}
-
-.card.highlight-card {
-  background-color: #272727;
-  color: white;
-  font-weight: 600;
-  border: none;
-  width: auto;
-  min-width: 30%;
-  position: relative;
-  margin: 82px auto 32px;
-}
-
-.card.card.highlight-card span {
-  margin-left: 60px;
-}
-
 a,
 a:visited,
 a:hover {
@@ -133,32 +46,6 @@ a:hover {
 
 a:hover {
   color: #125699;
-}
-
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-
-  .card-container > *:not(.circle-link) ,
-  .terminal {
-    width: 100%;
-  }
-
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-
-  .card.highlight-card span {
-    margin-left: 72px;
-  }
 }
 
 .logo-image {
@@ -173,6 +60,7 @@ svg#clouds {
 .app-title1 {
   font-family: 'Righteous';
   font-size: 50px;
+  color: var(--main-black);
   margin-top: -8px;
   margin-left: 15px;
 }
@@ -180,6 +68,7 @@ svg#clouds {
 .app-title2 {
   font-family: 'Righteous';
   font-size: 35px;
+  color: var(--main-black);
   margin-top: 10px;
   margin-left: 5px;
 }
