@@ -8,6 +8,7 @@ import {CompilerDTO} from '../model/compiler-dto';
 export class CompileAPIService {
 
   readonly API_HOME = 'https://wandbox.org/api';
+  readonly DEFAULT_COMPILER = 'openjdk-jdk8u121-b13';
 
   public inputCode: string;
   public message: string;
@@ -21,11 +22,11 @@ export class CompileAPIService {
 
     this.isCompiling = true;
 
-    this.message = 'File compile started.' + this.LINE_BREAK;
-
+    this.message = 'File compile started.' + '<br>';
+    this.appendMessage('Compiler >>> ' + this.DEFAULT_COMPILER);
     const testCode = {
       "code": this.inputCode,
-      "compiler": "openjdk-jdk8u121-b13",
+      "compiler": this.DEFAULT_COMPILER,
     }
 
     this.httpClient.post<CompilerDTO>(this.API_HOME + '/compile.json', testCode).toPromise().then(result => {
@@ -33,8 +34,9 @@ export class CompileAPIService {
         console.log('Compile Error::' + result.compiler_error);
         this.appendMessage(result.compiler_error);
       } else {
-        console.log('Message::' + result.program_message);
-        this.appendMessage(result.program_message);
+        const msg = result.program_message.split('\n').join('<br>');
+        console.log('Message::' + msg);
+        this.appendMessage(msg);
       }
       this.appendMessage('Received compile result.');
       this.isCompiling = false;
