@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {DatabaseService} from '../service/database.service';
 import {CodeSnippets} from '../model/code-snippets';
 import {CompileAPIService} from '../service/compile-api.service';
+import {UgoCompilerConstants} from "../../ugo-compiler-constants";
 
 @Component({
   selector: 'app-code-selection',
@@ -9,6 +10,8 @@ import {CompileAPIService} from '../service/compile-api.service';
   styleUrls: ['./code-selection.component.css']
 })
 export class CodeSelectionComponent {
+
+  UgoCompilerConstants = UgoCompilerConstants;
 
   public selectedSnippets: CodeSnippets;
 

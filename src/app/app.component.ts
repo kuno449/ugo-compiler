@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {DatabaseService} from './service/database.service';
+import {UgoCompilerConstants} from "../ugo-compiler-constants";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
 
   constructor(private _router: Router,
               private dbService: DatabaseService) {
-    dbService.getAllPosts();
+    if(UgoCompilerConstants.CODE_SELECTION) dbService.getAllPosts();
   }
 
   public openAboutPage() {
