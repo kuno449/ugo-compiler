@@ -1,7 +1,6 @@
-import {Component, Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {CodeSnippets, WpPostDTO} from '../model/code-snippets';
-import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +12,17 @@ export class DatabaseService {
   constructor(private http: HttpClient) {
   }
 
-  public getAllPosts() {
-    this.http.get('https://ugo.tokyo/get-all-posts.php').subscribe((dtos: Array<WpPostDTO>) => {
+  public getAllPosts(): Promise<void> {
+    return new Promise<void>(resolve =>
+      this.http.get('https://ugo.tokyo/get-all-posts.php').subscribe((dtos: Array<WpPostDTO>) => {
       dtos.forEach(dto => {
         this.snippets.push({
           postTitle: dto.post_title,
+          postName: dto.post_name,
           content: dto.post_content
         } as CodeSnippets)
       })
-    });
+      resolve();
+    }));
   }
 }
