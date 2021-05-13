@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {UgoCompilerConstants} from "../../ugo-compiler-constants";
 
 @Component({
   selector: 'app-about-page',
@@ -7,6 +8,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./about-page.component.css']
 })
 export class AboutPageComponent {
+
+  UgoCompilerConstants = UgoCompilerConstants;
 
   constructor(private _router: Router) { }
 
