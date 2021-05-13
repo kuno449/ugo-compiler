@@ -13,7 +13,7 @@ export class AboutPageComponent {
 
   constructor(private _router: Router) { }
 
-  backToMain() {
-    this._router.navigate(['main']);
+  public backToMain() {
+    this._router.navigate(['']);
   }
 }
